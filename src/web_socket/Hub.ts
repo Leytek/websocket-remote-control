@@ -1,7 +1,7 @@
 import commands from './commands';
 
 export default class Hub {
-  private commandsMap: {[a: string]: string} = {
+  private commandsMap: { [a: string]: string } = {
     mouse_up: 'mouseUp',
     mouse_down: 'mouseDown',
     mouse_left: 'mouseLeft',
