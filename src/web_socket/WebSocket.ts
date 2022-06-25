@@ -6,8 +6,8 @@ import Hub from './Hub'
 export default class WebSocketApp {
   #wsServer;
 
-  constructor() {
-    this.#wsServer = new WebSocketServer({port: 8008});
+  constructor(port: number) {
+    this.#wsServer = new WebSocketServer({port: port});
   }
 
   run() {
