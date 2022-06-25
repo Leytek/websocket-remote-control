@@ -18,7 +18,7 @@ export default class Hub {
 
     if (typeof result === 'object') {
       let res = result as {x: number, y: number};
-      return `${res.x}, ${res.y}`;
+      return `${res.x},${res.y}`;
     }
     if (typeof result === 'undefined')
       return null;
