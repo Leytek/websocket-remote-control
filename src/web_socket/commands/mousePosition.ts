@@ -1,5 +1,10 @@
 import robot from 'robotjs';
 
-export default function mousePosition(): Object {
+export interface IPoint {
+  x: number;
+  y: number;
+}
+
+export default function mousePosition(): IPoint {
   return robot.getMousePos();
 }

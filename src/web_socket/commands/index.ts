@@ -2,13 +2,13 @@ import mouseUp from './mouseUp';
 import mouseDown from './mouseDown';
 import mouseLeft from './mouseLeft';
 import mouseRight from './mouseRight';
-import mousePosition from './mousePosition';
+import mousePosition, { IPoint } from './mousePosition';
 import drawRectangle from './drawRectangle';
 import drawSquare from './drawSquare';
 import drawCircle from './drawCircle';
 import printScreen from './printScreen';
 
-const commands: {[a: string]: (a: number, b: number) => unknown} = {
+const commands: { [a: string]: (a: number, b: number) => void | IPoint | Promise<string> } = {
   mouseUp,
   mouseDown,
   mouseLeft,

@@ -1,4 +1,5 @@
 import commands from './commands';
+import {IPoint} from './commands/mousePosition'
 
 export default class Hub {
   private commandsMap: { [a: string]: string } = {
@@ -14,14 +15,12 @@ export default class Hub {
   }
 
   async call(command: string, arg1: number = 0, arg2: number = 0): Promise<string | null> {
-    const result = await commands[this.commandsMap[command]](arg1, arg2);
+    const result: void | IPoint | string = await commands[this.commandsMap[command]](arg1, arg2);
 
-    if (typeof result === 'object') {
-      let res = result as {x: number, y: number};
-      return `${res.x},${res.y}`;
-    }
-    if (typeof result === 'undefined')
-      return null;
-    return result as string;
+    if (typeof result === 'object')
+      return `${result.x},${result.y}`;
+    if (typeof result === 'string')
+      return result as string;
+    return null;
   }
 }
