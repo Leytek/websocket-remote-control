@@ -18,6 +18,6 @@ const commands: { [a: string]: (a: number, b: number) => void | IPoint | Promise
   drawSquare,
   drawCircle,
   printScreen
-}
+};
 
 export default commands;
